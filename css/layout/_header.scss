@@ -17,6 +17,8 @@
       @include display-flex; 
    }
    &__body{
+      position: relative;
+
       @include display-flex;
       gap: 2rem;
    }

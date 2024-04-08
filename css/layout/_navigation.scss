@@ -1,6 +1,6 @@
 .header__nav, .dropdown, .sub-dropdown {
    position: absolute;
-   top: 8.6rem;
+   top: 5.6rem;
    right: 0;
    transition: all 0.3s;
    transform: translatex(150rem);
@@ -30,6 +30,7 @@
    }
 }
 .nav {
+   overflow: hidden;
    &__list {
       margin-top: 2rem;
       display: flex;
