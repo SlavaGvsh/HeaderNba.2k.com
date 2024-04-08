@@ -1,0 +1,83 @@
+.header {
+   background: $color-bg;
+   padding: 2rem 1.5rem;
+   &__logo{
+      cursor: pointer;
+      transition: transform .3s ;
+
+      &:hover{
+         transform: scale(1.2);
+      }
+      @include respond(tab-port) {
+         flex: 0 0 10rem;
+      }
+   }
+
+   &__container{
+      @include display-flex; 
+   }
+   &__body{
+      @include display-flex;
+      gap: 2rem;
+   }
+   .banner{
+      display: block;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 2rem;
+      transition: transform .3s ;
+      &:hover{
+         transform: scale(1.2);
+      }
+      @include respond(tab-port){
+      font-size: 1.6rem;
+
+      }
+   }
+   &__burger{
+      width: 3.5rem;
+      height: 2rem;
+      background: transparent;
+      position: relative;
+      cursor: pointer;
+      transition: transform .3s ;
+
+      &:hover{
+         // opacity: 0.5;
+      }
+      span{
+         position: absolute;
+         // display: inline-block;
+         width: 100%;
+         left: 0;
+         top: 50%;
+         transform: translateY(-50%);
+         height: .2rem;
+         background: $color-blue;
+      }
+      &::after,&::before{
+         content: "";
+         position: absolute;
+         width: 100%;
+         left: 0;
+         top: 0;
+         height: .2rem;
+         background: $color-blue;
+      }
+      &::after{
+         top: 100%;
+      }
+      &.active::after{
+         transform: rotate(45deg);
+         top: 50%;
+      }
+      &.active::before{
+         transform: rotate(-45deg);
+         top: 50%;
+      }
+      &.active span{
+         opacity: 0;
+      }
+
+   }
+}

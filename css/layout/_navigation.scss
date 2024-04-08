@@ -1,0 +1,126 @@
+.header__nav, .dropdown, .sub-dropdown {
+   position: absolute;
+   top: 8.6rem;
+   right: 0;
+   transition: all 0.3s;
+   transform: translatex(150rem);
+   height: 100vh;
+   width: 30rem;
+
+   background: $color-blue;
+   @include respond(tab-port){
+      top: 6rem;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      width: 100%;
+     
+   }
+   &.active {
+      transform: translatex(0);
+      z-index: 100;
+      position: absolute;
+   }
+   &.dropdown, .sub-dropdown{
+      top: 100%;
+      margin: 0;
+   }
+   .drop-btn, .drop-btn1{
+      position: relative;
+   }
+}
+.nav {
+   &__list {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+   }
+   &__item {
+      // flex-grow: 1;
+      width: 100%;
+      text-align: center;
+   }
+   &__link {
+      color: $color-white;
+      text-transform: uppercase;
+      padding: 1rem 1.5rem;
+      display: block;
+      &:hover {
+         opacity: 0.65;
+      }
+   }
+}
+.languages {
+   margin-top: 2rem;
+   &__body {
+      border-top: 0.1rem solid $color-white;
+      border-bottom: 0.1rem solid $color-white;
+      cursor: pointer;
+      &:hover {
+         opacity: 0.65;
+      }
+   }
+   &__title {
+      padding: 1rem 1.5rem;
+      font-size: 1.8rem;
+   }
+   &__list {
+      background: $color-blue;
+      opacity: 0.5;
+   }
+   &__link {
+      color: $color-white;
+      text-transform: uppercase;
+      padding: 1rem 1.5rem;
+      display: block;
+      &:hover {
+         opacity: 0.65;
+      }
+   }
+}
+.languages__body[open] .languages__title {
+   color: #000;
+}
+
+
+.arrow {
+   position: relative;
+   &.active::before{
+      transform: rotate(45deg);
+   }
+   &.active::after{
+      transform: rotate(135deg);
+   }
+
+   &::before, &::after {
+      content: "";
+      position: absolute;
+      // background-color: red;
+      background-color: $color-white;
+      display: block;
+      top: calc(50% - 1px);
+      // -webkit-transform-origin: 50% 1px;
+      transform-origin: 50% 1px;
+      border-radius: 2px;
+      width: .2rem;
+      height: 1rem;
+   }
+   &::before {
+      transform: rotate(-45deg);
+   }
+   &::after {
+      transform: rotate(-135deg);
+   }
+  
+}
+
+.dropdown, .sub-dropdown{
+  
+   &.active{
+      @include respond(tab-port){
+         // top: 8rem;
+      }
+   }
+}
